@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Textform(props) {
   const handleUp = (event) => {
@@ -16,6 +16,17 @@ export default function Textform(props) {
   const handleClear = (event) => {
     event.preventDefault();
     setText("");
+  };
+
+  const handleCopy = (event) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(text);
+  };
+
+  const handleSpace = (event) => {
+    event.preventDefault();
+    let new_text = text.split(/[ ]+/);
+    setText(new_text.join(" "));
   };
 
   const handleOnChange = (event) => {
@@ -62,62 +73,69 @@ export default function Textform(props) {
               >
                 Clear Text
               </button>
+              <button
+                onClick={handleCopy}
+                className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+              >
+                Copy Text
+              </button>
+              <button
+                onClick={handleSpace}
+                className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+              >
+                Remove Space
+              </button>
             </div>
           </div>
         </form>
       </div>
 
-
-<div className="items-center justify-between mx-20 p-4">
-
-
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs uppercase text-white bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
+      <div className="items-center justify-between mx-20 p-4">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs uppercase text-white bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
                 <th scope="col" class="px-6 py-3">
-                    Words
+                  Words
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Characters
+                  Characters
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Sentances
+                  Sentances
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Paragraghs
+                  Paragraghs
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Minutes to Read
+                  Minutes to Read
                 </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {text.split(" ").length}
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {text.split(" ").length}
                 </th>
+                <td class="px-6 py-4">{text.length}</td>
                 <td class="px-6 py-4">
-                     {text.length}
+                  {text.split(/(?<=[.!?])\s+/).length - 1}
                 </td>
-                <td class="px-6 py-4">
-                {text.split(/(?<=[.!?])\s+/).length-1} 
-                </td>
-                <td class="px-6 py-4">
-                {text.split(/\n+/).length -1}
-                </td>
-                <td class="px-6 py-4">
-                {0.008 * text.split(" ").length} 
-                </td>
-            </tr>
-          
-            
-        </tbody>
-    </table>
-</div>
+                <td class="px-6 py-4">{text.split(/\n+/).length - 1}</td>
+                <td class="px-6 py-4">{0.008 * text.split(" ").length}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> Text Preview</h5>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {" "}
+            Text Preview
+          </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">{text}</p>
         </div>
       </div>
