@@ -13,6 +13,12 @@ export default function Textform(props) {
     setText(new_text)
 
   } 
+  const handleClear = (event)=>{
+    event.preventDefault();
+    let new_text = "";
+    setText(new_text)
+
+  } 
   const handleOnChange = (event)=>{
     setText(event.target.value);
 
@@ -35,6 +41,9 @@ export default function Textform(props) {
            </button>
            <button onClick={handleLow} className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                Convert to LowerCase
+           </button>
+           <button onClick={handleClear} className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+               Clear Text
            </button>
            
        </div>
