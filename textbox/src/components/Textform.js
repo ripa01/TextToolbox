@@ -91,41 +91,41 @@ export default function Textform(props) {
       </div>
 
       <div className="items-center justify-between mx-20 p-4">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs uppercase text-white bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead className="text-xs uppercase text-white bg-blue-700 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Words
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Characters
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Sentances
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Paragraghs
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Minutes to Read
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   {text.split(" ").length}
                 </th>
-                <td class="px-6 py-4">{text.length}</td>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">{text.length}</td>
+                <td className="px-6 py-4">
                   {text.split(/(?<=[.!?])\s+/).length - 1}
                 </td>
-                <td class="px-6 py-4">{text.split(/\n+/).length - 1}</td>
-                <td class="px-6 py-4">{0.008 * text.split(" ").length}</td>
+                <td className="px-6 py-4">{text.split(/\n+/).length - 1}</td>
+                <td className="px-6 py-4">{0.008 * text.split(" ").length}</td>
               </tr>
             </tbody>
           </table>
