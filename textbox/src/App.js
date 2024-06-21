@@ -15,8 +15,8 @@ function App() {
       <Navbar title="TextToolBox"  />
       {/* <Alert />  */}
         <Routes>
-          <Route path="/" element={<Textform heading = "Enter your text to analyse" />} />
-          <Route path="about" element={<About />} />
+          <Route exact path="/" element={<Textform heading = "Enter your text to analyse" />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
 
       </BrowserRouter>

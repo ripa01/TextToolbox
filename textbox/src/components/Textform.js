@@ -102,7 +102,7 @@ export default function Textform(props) {
                   Characters
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Sentances
+                  Sentences
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Paragraghs
