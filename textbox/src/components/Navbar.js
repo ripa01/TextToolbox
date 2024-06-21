@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../logo.svg';
+import logo from '../logo2.svg';
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
