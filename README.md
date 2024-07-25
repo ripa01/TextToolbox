@@ -1,6 +1,6 @@
 # TextToolbox
 
-**TextToolBox** is a versatile utility designed to help you manipulate text in various ways, offering a range of features to suit your text editing needs. With **TextToolBox**, you can effortlessly:
+**TextToolBox** is a versatile utility designed to help you manipulate text in various ways, offering a range of features to suit your text editing needs. With TextToolBox, you can effortlessly:
 
 - **Convert Text to Uppercase**: Transform all your text to uppercase letters with a single click, making it perfect for headings or emphasizing certain sections.
 - **Convert Text to Lowercase**: Easily change your text to lowercase, ideal for creating uniform text formats.
